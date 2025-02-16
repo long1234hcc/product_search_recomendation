@@ -88,17 +88,13 @@ with open("dict_cate_group.jsonl", "w", encoding="utf-8") as f:
      
 print("Write csv file")
    
-# Đường dẫn tới file
 jsonl_path = r"/hdd/sv10/svc/docker-svc/jupyter/data/Team_DC/long/Retrival/dict_cate_group.jsonl"
 csv_path = r"/hdd/sv10/svc/docker-svc/jupyter/data/Team_DC/long/Retrival/dict_cate_group.csv"
 
-# Mở file CSV để ghi
 with open(csv_path, mode="w", encoding="utf-8", newline='') as csv_file:
-    # Khởi tạo writer và ghi header
     writer = csv.DictWriter(csv_file, fieldnames=["key", "value"])
     writer.writeheader()
 
-    # Đọc từng dòng JSON và ghi trực tiếp vào CSV
     with open(jsonl_path, mode="r", encoding="utf-8") as f:
         for line in f:
             record = json.loads(line.strip())  # Đọc từng dòng JSON
