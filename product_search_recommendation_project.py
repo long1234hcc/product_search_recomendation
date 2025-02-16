@@ -97,9 +97,9 @@ with open(csv_path, mode="w", encoding="utf-8", newline='') as csv_file:
 
     with open(jsonl_path, mode="r", encoding="utf-8") as f:
         for line in f:
-            record = json.loads(line.strip())  # Đọc từng dòng JSON
+            record = json.loads(line.strip())
             for key, value in record.items():
-                writer.writerow({"key": key, "value": value})  # Ghi từng dòng vào CSV
+                writer.writerow({"key": key, "value": value})  
                 
                 
 print("Done")
